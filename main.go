@@ -106,11 +106,11 @@ func checkConnectivityDial(ip string) {
 
 func main() {
 	fmt.Println("Ping all nodes")
-	// subnet_str_ptr := flag.String("subnet", "", "Subnet ip e.g 192.168.0.0/24")
-	// subnet_len_ptr := flag.String("len", "", "Subnet e.g like 24")
+	subnet_str_ptr := flag.String("subnet", "192.168.86.1/24", "Subnet ip e.g 192.168.0.0/24")
+
 	flag.Parse()
 
-	ip_obj, ipnet_obj, _ := net.ParseCIDR("192.168.86.1/24")
+	ip_obj, ipnet_obj, _ := net.ParseCIDR(*subnet_str_ptr)
 	fmt.Println("ip_obj", ip_obj)
 	fmt.Println("ipnet_obj", ipnet_obj)
 	fmt.Printf("%T andd %T\n", ip_obj, ipnet_obj)
