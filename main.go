@@ -10,24 +10,6 @@ import (
 	"time"
 )
 
-/*
-type IPNet struct {
-    IP   IP     // network number
-    Mask IPMask // network mask
-}
-func ParseCIDR(s string) (IP, *IPNet, error)
-ParseCIDR parses s as a CIDR notation IP address and prefix length, like "192.0.2.0/24" or "2001:db8::/32", as defined in RFC 4632 and RFC 4291.
-func (*IPNet) Contains
-func (n *IPNet) Contains(ip IP) bool
-Contains reports whether the network includes ip.
-
-func (*IPNet) Network
-func (n *IPNet) Network() string
-Network returns the address's network name, "ip+net".
-
-func (*IPNet) String
-func (n *IPNet) String() string
-*/
 type PingOutput struct {
 	Ouput       string
 	Transmitted int
@@ -129,7 +111,6 @@ func main() {
 		ip_obj = IPIntToIPv4(ip_int)
 
 	}
-	// go checkConnectivity("8.8.8.8")
-	// go checkConnectivity("192.168.2.1")
+
 	time.Sleep(60 * time.Second)
 }
