@@ -45,9 +45,6 @@ func IPIntToIPv4(ip_int int) net.IP {
 func pingIP(ip_str string) string {
 	cmd_str := fmt.Sprintf("ping")
 	output, _ := exec.Command(cmd_str, "-c 1", ip_str).Output()
-	// if err != nil {
-	// 	fmt.Println("err while ping ", err)
-	// }
 
 	return string(output)
 }
